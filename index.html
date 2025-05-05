@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قناة شرف السورية</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #910000;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+    .language-toggle {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: white;
+      color: #910000;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .news-ticker {
+      background-color: #4d0000;
+      color: white;
+      padding: 0.5rem;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #4d0000;
+    }
+    nav a {
+      color: white;
+      padding: 1rem;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #910000;
+    }
+    .container {
+      padding: 2rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background-color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #910000;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .social-links a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .contact-form button {
+      background-color: #910000;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="language-toggle" onclick="toggleLanguage()">EN</div>
+    <h1 id="main-title">قناة شرف السورية</h1>
+    <p id="main-subtitle">صوت الشعب، نبض الحقيقة</p>
+  </header>
+
+  <div class="news-ticker">
+    <div class="ticker-text">عاجل: قرارات جديدة تخص الإعلام المستقل... | إطلاق برنامج جديد "عيون الحقيقة" قريباً... | قناة شرف تواصل تغطية الأحداث لحظة بلحظة...</div>
+  </div>
+
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#about">من نحن</a>
+    <a href="#news">الأخبار</a>
+    <a href="#programs">البرامج</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+
+  <div class="container">
+    <section id="about" class="section">
+      <h2 id="about-title">من نحن</h2>
+      <p id="about-text">قناة شرف السورية منصة إعلامية حرة مستقلة، تعكس صوت الشارع السوري وتسعى نحو إعلام مهني ومسؤول.</p>
+    </section>
+
+    <section id="news" class="section">
+      <h2>آخر الأخبار</h2>
+      <div class="news-grid">
+        <div class="card">
+          <h3>عنوان الخبر 1</h3>
+          <p>ملخص موجز عن الخبر الأول...</p>
+        </div>
+        <div class="card">
+          <h3>عنوان الخبر 2</h3>
+          <p>ملخص موجز عن الخبر الثاني...</p>
+        </div>
+        <div class="card">
+          <h3>عنوان الخبر 3</h3>
+          <p>ملخص موجز عن الخبر الثالث...</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="section">
+      <h2>برامجنا</h2>
+      <div class="news-grid">
+        <div class="card">
+          <h3>برنامج الرأي الحر</h3>
+          <p>نقاشات مفتوحة حول قضايا الوطن والمجتمع.</p>
+        </div>
+        <div class="card">
+          <h3>صوت الناس</h3>
+          <p>من الشارع إلى الشاشة – رأي المواطن أولاً.</p>
+        </div>
+      </div>
+      <div class="gallery">
+        <img src="https://via.placeholder.com/300x200" alt="برنامج 1" onclick="openLightbox(this.src)">
+        <img src="https://via.placeholder.com/300x200" alt="برنامج 2" onclick="openLightbox(this.src)">
+        <img src="https://via.placeholder.com/300x200" alt="برنامج 3" onclick="openLightbox(this.src)">
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>تواصل معنا</h2>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('تم إرسال الرسالة بنجاح!'); this.reset();">
+        <input type="text" placeholder="الاسم الكامل" required>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <textarea placeholder="رسالتك" rows="4" required></textarea>
+        <button type="submit">إرسال</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>جميع الحقوق محفوظة &copy; قناة شرف السورية 2025</p>
+    <div class="social-links">
+      <a href="#">فيسبوك</a>
+      <a href="#">تويتر</a>
+      <a href="#">يوتيوب</a>
+      <a href="#">إنستغرام</a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="تكبير الصورة">
+  </div>
+
+  <script>
+    function toggleLanguage() {
+      const title = document.getElementById('main-title');
+      const subtitle = document.getElementById('main-subtitle');
+      const aboutTitle = document.getElementById('about-title');
+      const aboutText = document.getElementById('about-text');
+
+      if (title.innerText === 'قناة شرف السورية') {
+        title.innerText = 'Sharaf Syrian Channel';
+        subtitle.innerText = 'Voice of the People, Pulse of Truth';
+        aboutTitle.innerText = 'About Us';
+        aboutText.innerText = 'Sharaf is a free, independent Syrian media platform reflecting the voice of the street and advocating for professional journalism.';
+      } else {
+        title.innerText = 'قناة شرف السورية';
+        subtitle.innerText = 'صوت الشعب، نبض الحقيقة';
+        aboutTitle.innerText = 'من نحن';
+        aboutText.innerText = 'قناة شرف السورية منصة إعلامية حرة مستقلة، تعكس صوت الشارع السوري وتسعى نحو إعلام مهني ومسؤول.';
+      }
+    }
+
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
