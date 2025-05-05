@@ -166,16 +166,16 @@
       <h2>آخر الأخبار</h2>
       <div class="news-grid">
         <div class="card">
-          <h3>عنوان الخبر 1</h3>
-          <p>ملخص موجز عن الخبر الأول...</p>
+          <input type="text" id="news-title-1" value="عنوان الخبر 1" />
+          <textarea id="news-summary-1">ملخص موجز عن الخبر الأول...</textarea>
         </div>
         <div class="card">
-          <h3>عنوان الخبر 2</h3>
-          <p>ملخص موجز عن الخبر الثاني...</p>
+          <input type="text" id="news-title-2" value="عنوان الخبر 2" />
+          <textarea id="news-summary-2">ملخص موجز عن الخبر الثاني...</textarea>
         </div>
         <div class="card">
-          <h3>عنوان الخبر 3</h3>
-          <p>ملخص موجز عن الخبر الثالث...</p>
+          <input type="text" id="news-title-3" value="عنوان الخبر 3" />
+          <textarea id="news-summary-3">ملخص موجز عن الخبر الثالث...</textarea>
         </div>
       </div>
     </section>
@@ -227,27 +227,5 @@
   <script>
     function toggleLanguage() {
       const title = document.getElementById('main-title');
-      const subtitle = document.getElementById('main-subtitle');
-      const aboutTitle = document.getElementById('about-title');
-      const aboutText = document.getElementById('about-text');
-
-      if (title.innerText === 'قناة شرف السورية') {
-        title.innerText = 'Sharaf Syrian Channel';
-        subtitle.innerText = 'Voice of the People, Pulse of Truth';
-        aboutTitle.innerText = 'About Us';
-        aboutText.innerText = 'Sharaf is a free, independent Syrian media platform reflecting the voice of the street and advocating for professional journalism.';
-      } else {
-        title.innerText = 'قناة شرف السورية';
-        subtitle.innerText = 'صوت الشعب، نبض الحقيقة';
-        aboutTitle.innerText = 'من نحن';
-        aboutText.innerText = 'قناة شرف السورية منصة إعلامية حرة مستقلة، تعكس صوت الشارع السوري وتسعى نحو إعلام مهني ومسؤول.';
-      }
-    }
-
-    function openLightbox(src) {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').style.display = 'flex';
-    }
-  </script>
-</body>
-</html>
+      const
+    
