@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>لوحة التحكم - قناة شرف</title>
+  <style>
+    body { font-family: Tahoma; padding: 2rem; background: #f8f8f8; }
+    h1 { color: #910000; }
+    label { display: block; margin: 1rem 0 0.5rem; }
+    textarea, input { width: 100%; padding: 0.5rem; }
+    button {
+      background-color: #910000;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>لوحة التحكم</h1>
+
+  <label>عنوان الخبر 1</label>
+  <input type="text" id="title1">
+
+  <label>موجز الخبر 1</label>
+  <textarea id="summary1" rows="3"></textarea>
+
+  <button onclick="saveChanges()">حفظ التغييرات</button>
+
+  <script>
+    function saveChanges() {
+      const title1 = document.getElementById('title1').value;
+      const summary1 = document.getElementById('summary1').value;
+
+      localStorage.setItem('title1', title1);
+      localStorage.setItem('summary1', summary1);
+
+      alert('تم حفظ التغييرات!');
+    }
+
+    window.onload = () => {
+      document.getElementById('title1').value = localStorage.getItem('title1') || '';
+      document.getElementById('summary1').value = localStorage.getItem('summary1') || '';
+    }
+  </script>
+</body>
+</html>
